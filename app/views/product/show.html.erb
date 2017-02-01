@@ -1,0 +1,44 @@
+<h1>Edit Product <%= @product.name %></h1>
+
+<form method = "post" action = "/product/<%= @product.id %>" enctype="multipart/form-data">
+    <input type="hidden" name="_method" value="put">
+    <div>
+        <label class = "lbl">Name</label>
+        <input class = "inp" value="<%= @product.name %>" type = "text" name = "txtname"></input>
+    </div>
+
+    <div>
+        <label class = "lbl">Price</label>
+        <input class = "inp" value="<%= @product.price %>"  type = "text" name = "txtprice"></input>
+    </div>
+
+    <div>
+        <label class = "lbl">Description</label>
+        <input class = "inp" value="<%= @product.description %>" type = "text" name = "txtdesc"></input>
+    </div>
+
+    <!--
+        <div>
+            <label class = "lbl">Image</label>
+            <input class = "inp" value="<%= @product.image %>" type = "url" name = "txtimage"></input>
+        </div>
+    -->
+
+    <div>
+        <label class = "lbl">Image</label><br>
+        <% @product.product_images.each do |image| %>
+        <div>
+        <img src="<%= image.image %>" width="100" alt="image_photo"> 
+        </div>
+        <% end %>
+        <input type="file" name="pic[]" multiple>
+    </div>
+
+    <div class="form-bottom">
+        <button class = "btn" type = "submit">Save</button>
+        <button class = "btn" type = "reset">Reset</button>     
+    </div>
+            
+       
+</form>
+

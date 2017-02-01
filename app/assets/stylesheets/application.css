@@ -1,0 +1,126 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+img {
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px #888;
+    transition-duration: 100ms;
+    cursor: pointer;
+}
+
+img:hover {
+    transform: translateY(-4px);
+}
+
+img.open{
+    width: 500px;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+}
+
+.form-bottom{
+    text-align: right;
+    width: 391px;
+}
+
+.btn {
+    background-color: #2E9AFE; 
+    border: none;
+    color: white;
+    padding: 10px 30px; 
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    font-family: sans-serif;
+}
+
+.btn.del {
+    padding: 5px 10px;
+    font-size: 12px;
+    margin-top: 0;
+}
+
+.btn.update {
+    padding: 5px 10px;
+    font-size: 12px;
+    margin-top: 0;
+    background-color: #D7DF01;
+}
+
+
+.lbl {
+    color: #6E6E6E;
+    font-weight: bold;
+    display: block;
+    width: 150px;
+    float: left;
+    font-family: sans-serif;
+}
+
+h1{
+    color: #151515;
+    font-weight: bold;   
+    font: 16px ;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: sans-serif;
+    text-align: center;        
+}
+
+.inp{
+    width: 221px; 
+	color : #747862;
+	height:20px;	
+	padding:4px 8px;
+	margin-bottom:0px;
+    font-family: sans-serif;
+}
+
+.tbl{
+    font-family: sans-serif;
+    font-size: 12px;
+    width: 100%;
+    border-spacing: 0;
+}
+.tbl thead tr {
+    background-color: #ccc;
+}
+
+.tbl thead th {
+    padding: 10px;
+    text-align: left;
+}
+
+.tbl tbody tr {
+    background-color: #fff;
+}
+
+.tbl tbody tr:nth-child(2n-1) {
+    background-color: #f0f0f0;
+}
+/*.tbl .delete-btn input[type="submit"] {
+    background-color: red;
+}*/
+
+.error {
+    background-color: red;
+    padding: 10px;
+    color: #fff;
+    margin: 10px 0;
+}

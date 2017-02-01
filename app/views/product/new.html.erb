@@ -1,0 +1,56 @@
+<h1>New Product</h1>
+
+    <div>
+        <%= image_tag("logo.png" , width: '200px') %>
+    </div>
+
+    <% if flash[:error] %>
+    <div class="error">
+        <% flash[:error].each do |error| %>
+        <div><%= error %></div>
+        <% end %>
+    </div>
+    <% end %>
+
+<form method = "post" action = "/product/new" enctype="multipart/form-data"  >    
+
+    <div>
+        <label class = "lbl">Name</label>
+        <input class = "inp" type = "text" name = "txtname"></input>
+    </div>
+ 
+
+    <div>
+        <label class = "lbl">Email</label>
+        <input class = "inp" type = "text" name = "txtemail"></input>
+    </div>
+
+    <div>
+        <label class = "lbl">Price</label>
+        <input class = "inp"  type = "text" name = "txtprice"></input>
+    </div>
+
+    <div>
+        <label class = "lbl">Description</label>
+        <input class = "inp" type = "text" name = "txtdesc"></input>
+    </div>
+    <!--
+    <div> 
+            <label class = "lbl">Image</label>
+            <input class = "inp" type = "url" name = "txtimage"></input>
+        </div>
+    -->
+    <div>
+        <label class = "lbl">Image</label><br>
+        <input type="file" name="pic[]" multiple>  
+    </div>
+
+
+    <div class="form-bottom">
+        <button class = "btn" type = "submit">Save</button>
+        <button class = "btn" type = "reset">Reset</button>     
+    </div>
+            
+       
+</form>
+

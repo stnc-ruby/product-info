@@ -1,0 +1,44 @@
+<h1>List of Products</h1>
+<table class="tbl">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Image</th>
+      <th>Description</th>
+      <th/>
+      <th/>
+    </tr>
+  </thead>
+ 
+  <% @products.each_with_index do |product, i| %>    <!--Product'ı index methodu icerisinde tanımladığı değişkenden alıyor-->
+    <tr class = "tr">
+      <td><%= i+1 %></td>
+      <td><%= product.name %></td>
+      <td><%= product.price %></td>
+      <td><img src="<%= product.product_images.first&.image %>" width="100" alt="image_photo"></td> 
+      <td><%= product.description %></td>
+      <td>           
+           <%= button_to 'Delete', "/product/#{ product.id }",  
+              method: :delete,
+              class: "btn del",
+              data: { confirm: 'Are you sure?' } %>
+            </td>
+      <td>           
+           <%= button_to 'Edit', "/product/#{ product.id }",  
+              method: :get,
+              class: "btn update"
+              %>
+            </td>
+    </tr>
+
+  <% end %>        
+</table>
+
+  <div>
+      Count:
+        <%= @products.count %>
+  </div>
+
+
